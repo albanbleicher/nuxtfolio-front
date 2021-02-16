@@ -1,0 +1,12 @@
+@mixin appear {
+    opacity: 0;
+    animation: appear 1s forwards
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

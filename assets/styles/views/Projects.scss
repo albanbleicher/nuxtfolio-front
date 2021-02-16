@@ -1,0 +1,11 @@
+.projects {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 100px;
+    position: relative;
+    box-sizing: border-box;
+}
