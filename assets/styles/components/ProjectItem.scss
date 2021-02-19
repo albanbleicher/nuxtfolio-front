@@ -1,19 +1,24 @@
 $project-image-size:500px;
-.project-item {
-    
+.project-item { 
     h1 {
         margin:0;
         font-family: orpheuspro, serif;
         font-weight: 700;
         font-style: normal;
         font-size: 5rem;
+        line-height: 5rem;
     }
     hr {
         width: 70%;
-        margin: 0  0 30px 0;
+        margin: 30px 0;
+        background-color: $main;
+        border: none;
+        height: 1px;
     }
     .illustration {
         width: $project-image-size;
+        position: relative;
+        z-index: 10;
         img {
             width: 100%;
         }
@@ -28,9 +33,10 @@ $project-image-size:500px;
             font-style: normal;
             font-size:25rem;
             position: absolute;
-            color: rgba($main, 0.1);
-            top: -10rem;
-            left: 0;
+            color: transparentize($main, 0.95);
+            top: -2vh;
+            left: -5vw;
+            line-height: 25rem;
             pointer-events: none;
             user-select: none;
         }

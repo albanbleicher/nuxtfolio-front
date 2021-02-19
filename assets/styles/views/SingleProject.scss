@@ -1,0 +1,119 @@
+.project-single {
+    height: 100%;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    .notice {
+        position: fixed;
+        bottom: 10vh;
+        color: transparentize($main, 0.80);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .header {
+        width: 100%;
+        height: calc(100vh - 6rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 0 10rem;
+        box-sizing: border-box;
+        h1 {
+        font-family: orpheuspro, serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 5rem;
+        margin: 0;
+        }
+        hr {
+            width: 60%;
+        }
+        p {
+            font-size: 0.9rem;
+            &.date {
+                margin-top: -20px;
+                color: transparentize($main, 0.5);
+            }
+        }
+    }
+    .content {
+        padding: 0 100px 100px 100px;
+        margin-top: 3rem;
+        .images-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            img {
+            width: 30%;
+            }
+        }
+        .description {
+            margin-top: 100px;
+            text-align: center;
+            line-height: 2rem;
+            color: transparentize($main, 0.6);
+        }
+        .two-sides {
+            display: flex;
+            justify-content: space-between;
+            .left-side {
+                width: 35%;
+                img {
+                    width: 100%; 
+                    &:not(:last-child) {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .right-side {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                .highlight-element {
+                    position: relative;
+                    &.purpose {
+                        &::before {
+                            content:'Purpose'
+                        }
+                    }
+                    &.context {
+                        &::before {
+                            content:'Context'
+                        }
+                    }
+                    &.delay {
+                        &::before {
+                            content:'Delay'
+                        }
+                    }
+                    &::before {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        font-size: 8rem;
+                        font-family: orpheuspro, serif;
+                        font-weight: 700;
+                        font-style: normal;
+                        color: transparentize($main, 0.9);
+                        transform: translateY(-50%);
+                    }
+                        .value {
+                            font-size: 3rem;
+                            font-family: orpheuspro, serif;
+                            font-weight: 700;
+                            line-height:4rem;
+                            font-style: normal;
+                        }
+                }
+            }
+        }
+        .credits {
+            width: 50%;
+            margin-top: 50px;
+            font-size: 0.8rem;
+        }
+    }
+}

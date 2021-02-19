@@ -13,6 +13,7 @@ export default {
     ...mapGetters('settings', ['siteContentBaseline'])
   },
   mounted() {
+    console.log(this.siteContentBaseline)
     const split_header = new SplitText(this.$refs['title'])
     const chars_header = split_header.chars
     const timeline = gsap.timeline()

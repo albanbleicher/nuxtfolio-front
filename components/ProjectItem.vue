@@ -1,17 +1,20 @@
 <template>
   <div class="project-item">
     <div class="illustration">
-        <img :src="data.medias[2].formats.medium.url" alt="data.title">
+        <img ref="image" :src="data.medias[0].formats.medium.url" alt="data.title">
     </div>
     <div class="informations">
-        <span class='index'>{{index < 9 ? '0'+index : index}}</span>
-      <h1>{{ data.title }}</h1>
-      <hr />
-      <p>{{ data.short_description }}</p>
+        <span ref='index' class='index'>{{index < 9 ? '0'+index : index}}</span>
+      <h1 ref="title">{{ data.title }}</h1>
+      <hr ref='separator' />
+      <p ref="description">{{ data.short_description }}</p>
+      <img ref='icon' src="@/assets/icons/arrow-right.svg" alt="read more">
     </div>
   </div>
 </template>
 <script>
+import gsap from 'gsap'
+import SplitText from '@/utils/SplitText'
 export default {
   props: {
     data: {
@@ -22,7 +25,23 @@ export default {
     }
   },
   mounted() {
-    console.log(this.data)
-  }
+    this.handleAppear()
+  },
+
+  methods:{
+    handleAppear() {
+      const split_header = new SplitText(this.$refs['title'])
+    const chars_header = split_header.chars
+    const split_index = new SplitText(this.$refs['index'])
+    const chars_index = split_index.chars
+    const timeline = gsap.timeline()
+    timeline.from(chars_index, {duration:0.4, opacity:0, y:-20,  ease:"back", stagger: 0.4 });
+    timeline.from(this.$refs['separator'], {duration:0.3, opacity:0, width:0});
+    timeline.from(chars_header, {duration:1, opacity:0, y:-20,  ease:"back", stagger: 0.06 });
+    timeline.from(this.$refs['description'], {duration:1.3, y:-40, opacity:0,  ease:"back", stagger: 0.06 }, "-=1");
+    timeline.from(this.$refs['icon'], {duration:1.3, x:-40, opacity:0,  ease:"back", stagger: 0.06 }, "-=1");
+    timeline.from(this.$refs['image'], {duration:1, opacity:0 }, "-=1");
+    },
+  },
 }
 </script>

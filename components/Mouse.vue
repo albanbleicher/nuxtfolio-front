@@ -20,7 +20,6 @@ export default {
             const x = e.clientX
             const y = e.clientY
             gsap.to(this.$refs['cursor'], {x:x, y:y, duration: 0.4})
-            console.log(e.target.localName)
             if(e.target.localName==="a") {
                 gsap.to(this.$refs['cursor'], {scale:3, duration:0.8})
             }

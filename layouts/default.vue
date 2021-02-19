@@ -39,11 +39,12 @@ export default {
     await this.fetchSettings()
     setTimeout(() => {
       this.loading = false
+      document.getElementById('__layout').style.overflow='auto'
     },5000)
   },
   methods:{
     ...mapActions('projects',['fetchProjects']),
-    ...mapActions('settings',['fetchSettings'])
+    ...mapActions('settings',['fetchSettings']),
   },
   computed:{
     ...mapGetters('projects',['projectList']),

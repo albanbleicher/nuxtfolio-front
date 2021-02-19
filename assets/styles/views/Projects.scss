@@ -5,7 +5,36 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    padding: 0 100px;
+    padding: 0 5rem;
     position: relative;
     box-sizing: border-box;
+    overflow: hidden;
+    .notice {
+        position: fixed;
+        bottom: 10vh;
+        color: transparentize($main, 0.80);
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    .dots {
+        position: fixed;
+        top: 50%;
+        right: 50px;
+        transform: translateY(-50%);
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: $main;
+            opacity: 0.4;
+            transition: opacity 0.4s;
+            &.active {
+                opacity: 1;
+            }
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
 }

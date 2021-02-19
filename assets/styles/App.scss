@@ -10,13 +10,24 @@ html, body {
     height: 100%;
     font-size: 15px;
     color: $main;
+    overflow: hidden;
+    background-color: $background;
+
 }
 * {
     cursor:none;
     user-select: none;
 }
-#__nuxt, #__layout {
+#__nuxt {
     height:100%
+}
+#__layout {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
 }
 .app {
     background-color: $background;
