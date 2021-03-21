@@ -16,7 +16,7 @@ html, body {
 }
 * {
     cursor:none;
-    user-select: none;
+    // user-select: none;
 }
 #__nuxt {
     height:100%
@@ -32,7 +32,7 @@ html, body {
 .app {
     background-color: $background;
     height: 100%;
-    padding: 3rem;
+    padding: 100px;
     font-size: 1rem;
     position: relative;
     box-sizing: border-box;

@@ -1,6 +1,6 @@
 <template>
   <div class='home'>
-    <h1 ref='title'>Hello, I'm Alban,</h1>
+    <h1 ref='title'>Hello, I'm Alban</h1>
     <div ref='baseline' v-html='siteContentBaseline'></div>
   </div>
 </template>
@@ -13,7 +13,6 @@ export default {
     ...mapGetters('settings', ['siteContentBaseline'])
   },
   mounted() {
-    console.log(this.siteContentBaseline)
     const split_header = new SplitText(this.$refs['title'])
     const chars_header = split_header.chars
     const timeline = gsap.timeline()

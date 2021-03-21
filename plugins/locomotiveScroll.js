@@ -1,5 +1,5 @@
 import Vue from "vue";
-import locomotiveScroll from "locomotive-scroll";
+const locomotiveScroll = require("locomotive-scroll");
 
 Object.defineProperty(Vue.prototype, "locomotiveScroll", {
   value: locomotiveScroll

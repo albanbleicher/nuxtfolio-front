@@ -12,33 +12,12 @@
     h1 {
         margin:0;
         font-size: 5rem;
-        font-family: orpheuspro, serif;
-        font-weight: 700;
-        font-style: normal;
+        @include title;
         position: relative;
-        &::after {
-            pointer-events: none;
-            user-select: none;
-            content:'Hello';
-            font-family: orpheuspro, serif;
-            font-weight: 700;
-            font-style: normal;
-            font-size: 450px;
-            position: absolute;
-            opacity: 0.02;
-            top: 50%;
-            left: -30%;
-            z-index: 1;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            transform: translateY(-50%);
-            color:transparentize($main, 0.98);
-            @include appear
-        }
     }
     p {
-        margin-top: -20px;
+        margin-top: 0px;
+        font-style: italic;
         font-weight: 300;
         a {
             @include link

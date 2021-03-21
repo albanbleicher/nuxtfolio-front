@@ -21,9 +21,7 @@
         padding: 0 10rem;
         box-sizing: border-box;
         h1 {
-        font-family: orpheuspro, serif;
-        font-weight: 700;
-        font-style: normal;
+        @include title;
         font-size: 5rem;
         margin: 0;
         }
@@ -93,19 +91,15 @@
                         position: absolute;
                         top: 50%;
                         left: 0;
-                        font-size: 8rem;
-                        font-family: orpheuspro, serif;
-                        font-weight: 700;
-                        font-style: normal;
+                        font-size: 7rem;
+                        @include title;
                         color: transparentize($main, 0.9);
                         transform: translateY(-50%);
                     }
                         .value {
-                            font-size: 3rem;
-                            font-family: orpheuspro, serif;
-                            font-weight: 700;
+                            font-size: 4rem;
                             line-height:4rem;
-                            font-style: normal;
+                            @include title
                         }
                 }
             }

@@ -23,9 +23,10 @@
         right: 50px;
         transform: translateY(-50%);
         .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 100%;
+            width: 5px;
+            height: 5px;
+            max-height: 5px;
+            // border-radius: 100%;
             background-color: $main;
             opacity: 0.4;
             transition: opacity 0.4s;

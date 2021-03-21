@@ -10,6 +10,7 @@
 <script>
 import ProjectItem from '@/components/ProjectItem'
 import { mapGetters } from 'vuex'
+import SplitText from '@/utils/SplitText'
 import gsap from 'gsap'
 export default {
     components: { ProjectItem },
@@ -56,7 +57,8 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            gsap.to(this.$refs['notice'], {opacity:1, duration:0.8})
+            const notice = new SplitText(this.$refs['notice'])
+            gsap.to(notice, {opacity:1, duration:0.8, stagger:0.2})
         }, 3000)
     },
 }

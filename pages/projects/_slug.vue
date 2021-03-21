@@ -1,9 +1,9 @@
 <template>
-        <div  class="project-single" data-scroll-container ref='container'>
+        <div class="project-single" data-scroll-container ref='container'>
         <div ref="notice" class="notice">Scroll to learn more about {{current.title}}</div>
         <div class="header">
-            <h1 data-scroll ref="title">{{current.title}}</h1>
-            <p data-scroll ref="date" class="date">{{new Date(current.date).getFullYear()}}</p>
+            <h1 data-scroll data-scroll-speed="1" ref="title">{{current.title}}</h1>
+            <p data-scroll data-scroll-speed="4" ref="date" class="date">{{new Date(current.date).getFullYear()}}</p>
         </div>
         <div data-scroll-section class="content">
             <div class="images-top">
@@ -47,12 +47,6 @@ export default {
         ...mapActions('projects',['getProjectBySlug']),
 },
     mounted() {
-const container = document.querySelector('.project-single') 
-const scroll = new this.locomotiveScroll({
-      el: container,
-      smooth: true
-    });
-    console.log(scroll)
              const split_header = new SplitText(this.$refs['title'])
     const chars_header = split_header.chars
     const split_date = new SplitText(this.$refs['date'])

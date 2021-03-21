@@ -5,10 +5,9 @@
     </div>
     <div class="informations">
         <span ref='index' class='index'>{{index < 9 ? '0'+index : index}}</span>
-      <h1 ref="title">{{ data.title }}</h1>
-      <hr ref='separator' />
-      <p ref="description">{{ data.short_description }}</p>
-      <img ref='icon' src="@/assets/icons/arrow-right.svg" alt="read more">
+      <h1 :style='"color:"+data.color' ref="title">{{ data.title }}</h1>
+      <p class="description" ref="description">{{ data.short_description }}</p>
+      <!-- <img @click="$router.push('/projects/'+data.slug)" ref='icon' src="@/assets/icons/arrow-right.svg" alt="read more"> -->
     </div>
   </div>
 </template>
@@ -36,11 +35,9 @@ export default {
     const chars_index = split_index.chars
     const timeline = gsap.timeline()
     timeline.from(chars_index, {duration:0.4, opacity:0, y:-20,  ease:"back", stagger: 0.4 });
-    timeline.from(this.$refs['separator'], {duration:0.3, opacity:0, width:0});
     timeline.from(chars_header, {duration:1, opacity:0, y:-20,  ease:"back", stagger: 0.06 });
-    timeline.from(this.$refs['description'], {duration:1.3, y:-40, opacity:0,  ease:"back", stagger: 0.06 }, "-=1");
-    timeline.from(this.$refs['icon'], {duration:1.3, x:-40, opacity:0,  ease:"back", stagger: 0.06 }, "-=1");
-    timeline.from(this.$refs['image'], {duration:1, opacity:0 }, "-=1");
+    timeline.from(this.$refs['description'], {duration:2, opacity:0,  ease:"back" }, "-=0.5");
+    timeline.from(this.$refs['image'], {duration:1, opacity:0 }, "-=2");
     },
   },
 }

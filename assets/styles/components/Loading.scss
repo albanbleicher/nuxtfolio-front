@@ -4,11 +4,12 @@
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: #000;
+    background-color: $background;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $background;
+    color: $main;
+
     font-size: 15px;
     font-weight: light;
 }
