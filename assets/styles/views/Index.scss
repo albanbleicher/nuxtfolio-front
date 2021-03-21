@@ -1,0 +1,74 @@
+.index {
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    background-color: white;
+    .main {
+        background-color: transparent;
+        padding: 100px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 100vh;
+    z-index: 10;
+        position: relative;
+        .content {
+            margin-left: 20vw;
+            h3 {
+                font-size: 4rem;
+                font-weight: 400;
+                margin:0;
+            }
+            p {
+                font-weight: 300;
+                font-size: 0.9rem;
+                opacity: 0.8;
+                margin-top:-5px
+            }
+        }
+        .header {
+        
+            h1 {
+                font-weight: 400;
+                font-size: 7rem;
+                margin:0;
+                margin-top: -10px;
+            }
+            p {
+                margin:0;
+                margin-top: -10px;
+                font-size: 0.8rem;
+                font-weight: 300;
+                text-transform: lowercase;
+                opacity: 0.5;
+            }
+        }
+        .footer {
+            ul {
+                display: flex;
+                margin: 0;
+                padding:0;
+                li {
+                    list-style: none;
+                    &:not(:last-child) {
+                        margin-right: 20px;
+                    }
+                    a {
+                        @include link;
+                        font-weight: 300;
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+}

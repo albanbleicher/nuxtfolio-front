@@ -1,5 +1,5 @@
 {
-  "name": "nuxtfolio-front",
+  "name": "albanbleicher",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,17 +10,20 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
-    "axios": "^0.21.1",
     "core-js": "^3.8.3",
+    "glslify-loader": "^2.0.0",
     "gsap": "^3.6.0",
-    "locomotive-scroll": "^4.1.0",
     "markdown-it": "^12.0.4",
-    "moment": "^2.29.1",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "raw-loader": "^4.0.2",
+    "three": "^0.126.1"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "fibers": "^5.0.0",
-    "sass": "^1.32.7",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.8",
     "sass-loader": "10"
   }
 }

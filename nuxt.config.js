@@ -1,10 +1,7 @@
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxtfolio-front',
+    title: 'albanbleicher',
     htmlAttrs: {
       lang: 'en'
     },
@@ -20,14 +17,11 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/styles/App.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {
-      src: "~/plugins/locomotiveScroll.js",
-      mode: "client"
-    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -48,5 +42,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    transpile: ['three'],
+  },
+  extend (config, ctx) {
+    config.module.rules.push(
+        {
+            test: /\.(glsl|vs|fs|vert|frag)$/,
+            exclude: /node_modules/,
+            use: [
+              'raw-loader',
+              'glslify-loader'
+            ]
+        }
+    )
+}
 }
