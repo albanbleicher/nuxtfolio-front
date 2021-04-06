@@ -1,0 +1,118 @@
+.resume {
+    .resume-wrapper {
+        padding:10%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .left {
+            width: 50%;
+            min-width: 300px;
+            h2 {
+                font-family: 'Mak', serif;
+                font-size: 3rem;
+                margin:0;
+            }
+            p {
+                margin: 0;
+                font-weight: 200;
+                line-height: 33px;
+            }
+        }
+        .right {
+            text-align: right;
+            width: 50%;
+            min-width: 300px;
+            h3 {
+                font-family: 'Mak', serif;
+                font-size: 2.3rem;
+                margin-top: 0;
+            }
+            .resume-section {
+                &:first-child {
+                    margin-top: 0;
+                }                
+                margin: 80px 0;
+
+            }
+            .resume-block {
+                position: relative;
+                margin-right: 50px;
+                &::after {
+                    width: 10px;
+                    height: 10px;
+                    position: absolute;
+                    right: -50px;
+                    top: 50%;
+                    content:'';
+                    border-radius: 100%;
+                    background-color: $text;
+                    transform-origin: (0,-50%);
+                }
+                &:not(:last-child){
+                    margin-bottom: 30px;
+                }
+                h4 {
+                    font-weight: 200;
+                    line-height: 33px;
+                    font-size: 1.2rem;
+                    margin:0
+                }
+                p {
+                    text-transform: uppercase;
+                    font-size: 0.8rem;
+                    margin:0;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                    a {
+                        @include link;
+                    }
+                }
+                span {
+                    font-weight: 200;
+                    font-style: italic;
+                    opacity: 0.62;
+                }
+            }
+        }
+        
+    }
+    .contact {
+        padding: 10%;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        h2 {
+            font-family: 'Mak', serif;
+            font-size: 3rem;
+            margin:0;
+            margin-bottom: 15px;
+        }
+        a {
+            font-weight: 200;
+            @include link;
+            font-size: 0.9rem;
+        }
+    }
+    .footer {
+        position: relative;
+        padding:5% 10%;
+        width: 100%;
+        text-align: right;
+        box-sizing: border-box;
+        a {
+            font-weight: 200;
+            @include link;
+            font-size: 0.9rem;
+        }
+        &::after{
+            position: absolute;
+           left: -10vw;
+            top: 0;
+            content:'';
+            width:100vw;
+            height: 1px;
+            background-color: $line;
+        }
+    }
+}

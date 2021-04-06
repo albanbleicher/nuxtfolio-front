@@ -1,0 +1,20 @@
+@mixin link {
+    position: relative;
+    color: $text;
+    text-decoration: none;
+    &::after {
+        position: absolute;
+        bottom: -5px;
+        width: 0%;
+        height: 1px;
+        left: 0;
+        content: '';
+        background-color: $text;
+        transition:width 0.5s;
+    }
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}

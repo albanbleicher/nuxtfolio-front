@@ -18,7 +18,7 @@ export const state = () => ({
       siteBaseline(state) {
         return state.baseline
       },
-      siteContentBaseline(state) {
+      introduction(state) {
         return state.content_baseline
       },
       contactInfos(state) {
@@ -38,8 +38,8 @@ export const state = () => ({
   export const actions = {
     async fetchSettings({ commit }) {
         try {
-            const response = await axios.get('https://albanbleicher-back.herokuapp.com/settings')
-            commit('SET_SETTINGS', response.data)
+            const response = await this.$strapi.find('settings')
+            commit('SET_SETTINGS', response)
         }
         catch(e) {
             console.log('Erreur', e)

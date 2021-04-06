@@ -5,7 +5,7 @@ export const state = () => ({
     current:{}
   })
   export const getters = {
-      projectList(state) {
+      workList(state) {
         return state.list
       },
       current(state) {
@@ -13,33 +13,39 @@ export const state = () => ({
       }
   }
   export const mutations = {
-    SET_PROJECT_LIST(state, data) {
+    SET_WORK_LIST(state, data) {
         state.list = data;
     },
-    SET_CURRENT_PROJECT(state, data) {
+    SET_CURRENT_WORK(state, data) {
       data.credits = mdToHTML(data.credits)
       state.current = data;
   } 
   }
   export const actions = {
-    async fetchProjects({ commit }) {
-        try {
-            const response = await axios.get('https://albanbleicher-back.herokuapp.com/projects')
-            commit('SET_PROJECT_LIST', response.data)
+    async fetchWork({ commit }) {
+        return new Promise(async (resolve, reject) => {
+          try {
+            const response = await this.$strapi.find('projects')
+            commit('SET_WORK_LIST', response)
+            setTimeout(() => {
+              resolve()
+            }, 1500)
         }
         catch(e) {
+          reject(e)
             console.log('Erreur', e)
         }
+        })
     },
-    async getProjectBySlug({ commit, state }, slug) {
+    async getWorkBySlug({ commit, state }, slug) {
       try {
           const response = state.list.find(item => item.slug === slug)
           console.log(response)
           if(response) {
-            commit('SET_CURRENT_PROJECT', response)
+            commit('SET_CURRENT_WORK', response)
           }
           else {
-            console.log(this.$router.push('/projects'))
+            console.log(this.$router.push('/work'))
           }
       }
       catch(e) {

@@ -1,4 +1,4 @@
-# albanbleicher
+# nuxtfolio-front
 
 ## Build Setup
 

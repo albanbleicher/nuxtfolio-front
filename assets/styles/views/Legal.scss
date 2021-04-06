@@ -1,0 +1,19 @@
+.legal {
+    padding: 10%;
+    box-sizing: border-box;
+    h1 {
+        font-family: 'Mak', serif;
+        font-weight: 200;
+        font-size: 3rem;
+        margin: 0;
+    }
+    p {
+        font-weight: 200;
+        line-height: 33px;
+    }
+    a {
+        @include link;
+        font-style: italic;
+        font-weight: 200;
+    }
+}

@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'albanbleicher',
+    title: 'Alban Bleicher',
     htmlAttrs: {
       lang: 'en'
     },
@@ -22,6 +22,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {
+      src: "~/plugins/locomotive-scroll.js",
+      mode: "client"
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -29,31 +33,27 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/moment'
+    
   ],
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+'@nuxtjs/strapi'
   ],
+  strapi: {
+    entities: ['projects', 'settings'],
+    url: 'https://albanbleicher-back.herokuapp.com/'
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['three'],
-  },
-  extend (config, ctx) {
-    config.module.rules.push(
-        {
-            test: /\.(glsl|vs|fs|vert|frag)$/,
-            exclude: /node_modules/,
-            use: [
-              'raw-loader',
-              'glslify-loader'
-            ]
-        }
-    )
-}
+    transpile:[
+      'gsap'
+    ]
+  }
 }

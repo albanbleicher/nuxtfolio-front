@@ -1,0 +1,45 @@
+.home {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    left: -10vw;
+    bottom: 0;
+    content: '';
+    width: 100vw;
+    height: 1px;
+    background-color: $line;
+  }
+
+  height: 85%;
+  display: flex;
+  justify-content: space-between;
+  .introduction {
+      h2 {
+          font-family: 'Mak', serif;
+          font-size: 3rem;
+          font-weight: normal;
+          margin:0;
+      }
+    padding: 10%;
+    box-sizing: border-box;
+
+    p {
+      margin: 0;
+      margin-top: 30px;
+      font-weight: 200;
+      line-height: 33px;
+    }
+  }
+
+  img {
+    width: 40%;
+    object-fit: cover;
+    filter: saturate(0);
+    transition: filter 0.7s;
+
+    &:hover {
+      filter: saturate(1)
+    }
+  }
+}
