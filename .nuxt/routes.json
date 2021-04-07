@@ -3,35 +3,30 @@
     "name": "legal",
     "path": "/legal",
     "component": "/Users/albanbleicher/dev/perso/portfolios/nextfolio/nuxtfolio-front/pages/legal.vue",
-    "chunkName": "pages/legal",
-    "_name": "_291e1ef7"
+    "chunkName": "pages/legal"
   },
   {
     "name": "resume",
     "path": "/resume",
     "component": "/Users/albanbleicher/dev/perso/portfolios/nextfolio/nuxtfolio-front/pages/resume.vue",
-    "chunkName": "pages/resume",
-    "_name": "_8cf75a42"
+    "chunkName": "pages/resume"
   },
   {
     "name": "work",
     "path": "/work",
     "component": "/Users/albanbleicher/dev/perso/portfolios/nextfolio/nuxtfolio-front/pages/work/index.vue",
-    "chunkName": "pages/work/index",
-    "_name": "_165ca686"
+    "chunkName": "pages/work/index"
   },
   {
     "name": "work-slug",
     "path": "/work/:slug",
     "component": "/Users/albanbleicher/dev/perso/portfolios/nextfolio/nuxtfolio-front/pages/work/_slug.vue",
-    "chunkName": "pages/work/_slug",
-    "_name": "_14a6053e"
+    "chunkName": "pages/work/_slug"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/albanbleicher/dev/perso/portfolios/nextfolio/nuxtfolio-front/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_7c053090"
+    "chunkName": "pages/index"
   }
 ]

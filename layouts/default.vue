@@ -37,7 +37,6 @@
 import gsap from 'gsap'
 import {CSSRulePlugin} from 'gsap/CSSRulePlugin'
 gsap.registerPlugin(CSSRulePlugin)
-import { mapActions, mapGetters } from 'vuex'
 import Mouse from '../components/Mouse.vue'
 export default {
   components: { Mouse },
@@ -46,19 +45,11 @@ export default {
       loaded:false
     }
   },
-  methods:{
-    ...mapActions('Infos', ['fetchSettings']),
-    ...mapActions('Work', ['fetchWork']),
-    ...mapActions('Resume', ['fetchResume'])
-  },
   created() {
     this.$root.timeline = gsap.timeline()
   },
   async mounted() {
     this.$root.timeline.from(this.$refs['loading'], {opacity:0, duration:1.5 , delay:0.2})
-    await this.fetchSettings()
-    await this.fetchResume()
-    await this.fetchWork()
       this.loaded  = true
       this.$root.loaded=true
       const right = CSSRulePlugin.getRule('.content-wrapper:after')
@@ -68,10 +59,10 @@ export default {
     this.$root.timeline.from([this.$refs['title'], this.$refs['nav']], {opacity:0, duration:1.2})
     this.$root.timeline.from([left, right], {cssRule:{
       height:0,
-    }, duration:2, delay:1},1)
+    }, duration:2},0)
     this.$root.timeline.from([navBottom, homeBottom], {cssRule:{
       width:0,
-    },  duration:2, delay:1},1)
+    },  duration:2 },0)
     
 // 
     // timeline.from(this.$refs['wrapper'], {opacity:0, duration:1.4})
